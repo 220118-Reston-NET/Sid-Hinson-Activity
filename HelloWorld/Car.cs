@@ -12,7 +12,7 @@ namespace CarFunction
         private string _color = "Blue";
         private string _owner;
         private int _fuel;
-        private int _mpg;
+        private int _gallonPerMile;
 
         //Property
         //They are in PascalCase
@@ -26,7 +26,49 @@ namespace CarFunction
 
         }
 
+        public string owner 
+        { 
+            get { return _owner; }
+            set { _owner = value; } 
+            
+        }
         
+        public Car()
+        {
+         _color = "Blue";
+         _gallonPerMile = 10;
+         _owner = "No Owner";
+         Fuel = 100;
+
+        }
+        public int Fuel { get; set; }
+
+        //Below is an example of Polymorphism (Overriding)
+        public void Start ()
+        {
+            Console.WriteLine("The car will start now!!");
+            Console.WriteLine($"Current fuel : {Fuel}");
+
+        }
+
+        //You can add parameters to a method to pass in data to be used inside method
+        //Make sure the parameter has a datatype and then a name
+        public void Start (int p_fuel)
+        {
+            Fuel = p_fuel;
+            Console.WriteLine("The car will start now!!");
+            Console.WriteLine($"Current fuel : {Fuel}");
+        }
+
+        //Will give the total distance of the car
+       public double TotalDistance()
+       {
+            return (double)Fuel/_gallonPerMile;
+       }
+
+
+
+
     }   
 
 }

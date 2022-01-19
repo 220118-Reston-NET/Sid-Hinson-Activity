@@ -74,7 +74,7 @@ while (repeat)
 
     else if(userInput == "6")
     {
-        Console.WriteLine(" Thank you for using the Win Selection Program!");
+        Console.WriteLine(" Thank you for using the Wine Selection Program!");
         Console.WriteLine(" Press Enter to end the Program!");
         Console.ReadLine();
         repeat = false;

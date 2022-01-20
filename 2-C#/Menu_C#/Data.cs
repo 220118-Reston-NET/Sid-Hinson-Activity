@@ -5,42 +5,22 @@ namespace DataFunction
    
     public class DinnerSelection
     {
-        public List<string> _choices = new List<string>();
-        public string dinner = _choices[0];
-        public string wine = _choices[1];
-
-        
-
-        public void DisplayChoices() 
+        public static List<string> _addSelection = new List<string>();
+    
+        public static void dinnerchoice(string item)
         {
-            
-          Console.WriteLine("Your selection for dinner is: " + _choices[0]);
-          Console.WriteLine("Your selection for wine is: " + _choices[1]);
-                
-        }
-
-        public void RemoveChoices()
-        {
-
-          _choices[0] = "Nothing";
-          _choices[1] = "Nothing";
-          Console.WriteLine("Your selection for dinner is: " + _choices[0]);
-          Console.WriteLine("Your selection for wine is: " + _choices[1]);
+            _addSelection.Add(item);
 
         }
-
-        public void SetDinner()
-        {
-            dinner = value;
-
-        }
-
-        public void SetWine()
-        {
-            wine = value;
-
-        }
-
-
+    
+    public static void DisplaySelections()
+    {
+        Console.WriteLine("These are your selections :");
+              foreach (string item in _addSelection)
+            {
+                Console.WriteLine(item);
+            }
+      }
     }
-}
+
+ }

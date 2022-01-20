@@ -6,10 +6,11 @@ using DataFunction;
 Console.Clear();
 bool repeat = true;
 string tx ="Thanks for Using this program!";
-string gb ="Press Enter to End Program! Goodbye!";
+string gb ="Press Enter to Continue";
 string red ="Please Choose [1] for Cabernet or [2] for Merlot";
 string white ="Please Choose [1] for Chardonnay or [2] for Sauvignon";
 string sweet ="Please Choose [1] for Riesling or [2] for Pinot Grigio";
+
 
 Console.WriteLine("******************************************************");
 Console.WriteLine("* Welcome to the Wine Pairing Optimizer Application  *");
@@ -31,128 +32,146 @@ while (repeat)
 
     if (choice == "1")
     {
+            string item = "Steak";
+            DinnerSelection.dinnerchoice(item);
             Console.WriteLine(red);
             string choice2 = Console.ReadLine();
              if (choice2 == "1")
             {
-                
+                string item2 = "Intrinsic Cabernet";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of Intrinsic Cabernet");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
                 
             }
             else if(choice2 == "2")
             {
-              
+                string item2 = "JLohr Merlot";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of JLohr Merlot");
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+               
             }
     }
 
       else if(choice == "2")
     {
-            string dinnerchoice = "Chicken";
+            string item = "Chicken";
+            DinnerSelection.dinnerchoice(item);
             Console.WriteLine(white);
             string choice2 = Console.ReadLine();
             if (choice2 == "1")
             {
-                
+                string item2 = "La Crema Chardonnay";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+               
             }
             else if(choice2 == "2")
             {
-                
+                string item2 = "Alphonse Sauvignon";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+               
             }
     }
 
      else if(choice == "3")
     {
-            string dinnerchoice = "Pork";
+            string item = "Pork";
+            DinnerSelection.dinnerchoice(item);
             Console.WriteLine(white);
             string choice2 = Console.ReadLine();
                 if (choice2 == "1")
             {
-                
+                string item2 = "La Crema Chardonnay";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
             }
             else if(choice2 == "2")
             {
-                
+                string item2 = "Alphonse Sauvignon";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
             }
     } 
 
      else if(choice == "4")
     {
             
+            string item = "Seafood";
+            DinnerSelection.dinnerchoice(item);
             Console.WriteLine(white);
             string choice2 = Console.ReadLine();
                 if (choice2 == "1")
             {
-                
+                string item2 = "La Crema Chardonnay";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
             }
             else if(choice2 == "2")
             {
-               
+                string item2 = "Alphonse Sauvignon";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
             }
     }
 
      else if(choice == "5")
     {
-            
+            string item = "Vegetarian Meal";
+            DinnerSelection.dinnerchoice(item);
             Console.WriteLine(sweet);
             string choice2 = Console.ReadLine();
                 if (choice2 == "1")
             {
-                
+                string item2 = "St.Michelle Riesling";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of St.Michelle Riesling");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
             }
             else if(choice2 == "2")
             {
                 
+                string item2 = "King Estate Pinot Grigio";
+                DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine("We recommend one glass of King Estate Pinot Grigio");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
-                repeat = false;
+                
             }
     }
 
@@ -167,14 +186,14 @@ while (repeat)
     else
     {
         Console.WriteLine(" Command Not Found!!!!! ");
-        Console.WriteLine(" Please try Again!! Press Enter to end the Program!");
+        Console.WriteLine(" Please try Again!! Press Enter to restart the Program!");
         Console.ReadLine();
-        repeat = false;
     }
 
-
-
-
+    Console.WriteLine(" Here are your cart selections:"); 
+    DinnerSelection.DisplaySelections();
+    Console.WriteLine(" Press Enter to restart the Program!");
+    Console.ReadLine();
 
 }
 

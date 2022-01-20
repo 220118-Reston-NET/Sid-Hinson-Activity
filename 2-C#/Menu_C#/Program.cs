@@ -5,7 +5,7 @@ using DataFunction;
 
 Console.Clear();
 bool repeat = true;
-string tx ="Thanks for Using this program!";
+string tx ="Selections are Made!";
 string gb ="Press Enter to Continue";
 string red ="Please Choose [1] for Cabernet or [2] for Merlot";
 string white ="Please Choose [1] for Chardonnay or [2] for Sauvignon";
@@ -190,11 +190,92 @@ while (repeat)
         Console.ReadLine();
     }
 
-    Console.WriteLine(" Here are your cart selections:"); 
-    DinnerSelection.DisplaySelections();
-    Console.WriteLine(" Press Enter to restart the Program!");
-    Console.ReadLine();
+bool repeat2 = true;
 
+while (repeat2)
+    {
+    Console.Clear();
+    Console.WriteLine(" Here are your Dinner selections:"); 
+    DinnerSelection.DisplaySelections();
+    Console.WriteLine(" [1] Do you wish to Clear Selections and Start Over? Enter 1?");
+    Console.WriteLine(" [2] Do you wish to Remove Selections?");
+    Console.WriteLine(" [3] Do you wish to Search Selections?");
+    Console.WriteLine(" [4] Do you wish to end the Wine Selection Program? Enter 4?");
+    string choice3 = Console.ReadLine();
+
+    
+    if (choice3 == "1")
+        {
+        
+        Console.WriteLine(" Press Enter to Clear Selections");
+        Console.ReadLine();
+        DinnerSelection.ClearSelections();
+        Console.WriteLine(" Here are your Dinner selections:"); 
+        DinnerSelection.DisplaySelections();
+        repeat2 = false;
+        }
+    else if(choice3 == "2")
+        {
+        Console.WriteLine(" Do you wan to remove Dinner or Wine? Enter [1] for Dinner or [2] for Wine.");
+        string choice4 = Console.ReadLine();
+            if (choice4 == "1")
+            {
+                DinnerSelection.RemoveSelectionsDinner();
+                
+                Console.WriteLine(" Steak has been removed ");
+                Console.WriteLine(" Thank you for using the Wine Selection Program!");
+                Console.WriteLine(" Press Enter to continue");
+                Console.ReadLine();
+                repeat2 = false;
+                
+            }
+            else if (choice4 == "2")
+            {
+                DinnerSelection.RemoveSelectionsWine();
+
+                Console.WriteLine(" Wine has been removed ");
+                Console.WriteLine(" Thank you for using the Wine Selection Program!");
+                Console.WriteLine(" Press Enter to continue");
+                Console.ReadLine();
+                repeat2 = false;
+            }
+            else
+            {
+            Console.WriteLine(" Command Not Found!!!!! ");
+            Console.WriteLine(" Please try Again!! Press Enter to restart!");
+            Console.ReadLine();
+            repeat2 = false;
+            }
+
+
+        }
+      else if(choice3 == "3")
+        {
+        
+        Console.WriteLine(" Please type in your search selection");
+        string item3 = Console.ReadLine();
+        DinnerSelection.SearchSelections(item3);
+        }
+    else if(choice3 == "4")
+        {
+        
+        Console.WriteLine(" Thank you for using the Wine Selection Program!");
+        Console.WriteLine(" Press Enter to end the Program!");
+        Console.ReadLine();
+        repeat2 = false;
+        repeat = false;
+                
+        }
+     else
+    {
+        Console.WriteLine(" Command Not Found!!!!! ");
+        Console.WriteLine(" Please try Again!! Press Enter to restart!");
+        Console.ReadLine();
+        repeat2 = false;
+    }
+
+
+    }
 }
 
 

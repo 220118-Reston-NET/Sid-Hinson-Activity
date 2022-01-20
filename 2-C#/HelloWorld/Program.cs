@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CarFunction;
 using CollectionFunction;
+using ConversionFunction;
 
 //This will print whatever string you put in the parenthesis into the terminal
 // Console.WriteLine("Hello, World!");
@@ -63,5 +64,5 @@ using CollectionFunction;
 // }
 
 //Initialized Collection class
-Collection collect = new Collection();
-collect.CollectionMain();
+// Collection collect = new Collection();
+// collect.CollectionMain();

@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Sid Hinson
 //Program converted from shell script from first day1 shell prog
+using DataFunction;
 
 Console.Clear();
 bool repeat = true;
@@ -34,15 +35,20 @@ while (repeat)
             string choice2 = Console.ReadLine();
              if (choice2 == "1")
             {
+                
                 Console.WriteLine("We recommend one glass of Intrinsic Cabernet");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 repeat = false;
+                
             }
             else if(choice2 == "2")
             {
+              
                 Console.WriteLine("We recommend one glass of JLohr Merlot");
+                Console.WriteLine("Press Enter to Continue");
+                Console.ReadLine();
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -52,10 +58,12 @@ while (repeat)
 
       else if(choice == "2")
     {
+            string dinnerchoice = "Chicken";
             Console.WriteLine(white);
             string choice2 = Console.ReadLine();
             if (choice2 == "1")
             {
+                
                 Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -64,6 +72,7 @@ while (repeat)
             }
             else if(choice2 == "2")
             {
+                
                 Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -74,10 +83,12 @@ while (repeat)
 
      else if(choice == "3")
     {
+            string dinnerchoice = "Pork";
             Console.WriteLine(white);
             string choice2 = Console.ReadLine();
                 if (choice2 == "1")
             {
+                
                 Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -86,6 +97,7 @@ while (repeat)
             }
             else if(choice2 == "2")
             {
+                
                 Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -96,10 +108,12 @@ while (repeat)
 
      else if(choice == "4")
     {
+            
             Console.WriteLine(white);
             string choice2 = Console.ReadLine();
                 if (choice2 == "1")
             {
+                
                 Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -108,6 +122,7 @@ while (repeat)
             }
             else if(choice2 == "2")
             {
+               
                 Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -118,11 +133,12 @@ while (repeat)
 
      else if(choice == "5")
     {
-        
+            
             Console.WriteLine(sweet);
             string choice2 = Console.ReadLine();
                 if (choice2 == "1")
             {
+                
                 Console.WriteLine("We recommend one glass of St.Michelle Riesling");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -131,6 +147,7 @@ while (repeat)
             }
             else if(choice2 == "2")
             {
+                
                 Console.WriteLine("We recommend one glass of King Estate Pinot Grigio");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
@@ -154,6 +171,10 @@ while (repeat)
         Console.ReadLine();
         repeat = false;
     }
+
+
+
+
 
 }
 

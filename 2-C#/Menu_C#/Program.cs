@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Sid Hinson
 //Program converted from shell script from first day1 shell prog
+//1-20-2022 Expanded to include more functionality
 using DataFunction;
 
 Console.Clear();
@@ -10,7 +11,8 @@ string gb ="Press Enter to Continue";
 string red ="Please Choose [1] for Cabernet or [2] for Merlot";
 string white ="Please Choose [1] for Chardonnay or [2] for Sauvignon";
 string sweet ="Please Choose [1] for Riesling or [2] for Pinot Grigio";
-
+while (repeat)
+{
 
 Console.WriteLine("******************************************************");
 Console.WriteLine("* Welcome to the Wine Pairing Optimizer Application  *");
@@ -22,13 +24,13 @@ Console.WriteLine("*    Enter 3 if you are having pork for dinner!      *");
 Console.WriteLine("*   Enter 4 if you are having seafood for dinner!    *");
 Console.WriteLine("*    Enter 5 if you are vegetarian for dinner!       *");
 Console.WriteLine("*         Enter 6 to exit this program!              *");
+Console.WriteLine("*   !PRESS ENTER TWICE TO SKIP TO CUSTOMIZE MENU!    *");
 Console.WriteLine("******************************************************");
 
 Console.WriteLine(" Please Enter a Number to make your selection!");
 string choice = Console.ReadLine();
 
-while (repeat)
-{
+
 
     if (choice == "1")
     {
@@ -40,7 +42,6 @@ while (repeat)
             {
                 string item2 = "Intrinsic Cabernet";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of Intrinsic Cabernet");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -51,7 +52,6 @@ while (repeat)
             {
                 string item2 = "JLohr Merlot";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of JLohr Merlot");
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
                 Console.WriteLine(tx);
@@ -71,7 +71,6 @@ while (repeat)
             {
                 string item2 = "La Crema Chardonnay";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -81,7 +80,6 @@ while (repeat)
             {
                 string item2 = "Alphonse Sauvignon";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -99,7 +97,6 @@ while (repeat)
             {
                 string item2 = "La Crema Chardonnay";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -109,7 +106,6 @@ while (repeat)
             {
                 string item2 = "Alphonse Sauvignon";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -128,7 +124,6 @@ while (repeat)
             {
                 string item2 = "La Crema Chardonnay";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of La Crema Chardonnay");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -138,7 +133,6 @@ while (repeat)
             {
                 string item2 = "Alphonse Sauvignon";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of Alphonse Sauvignon");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -156,7 +150,6 @@ while (repeat)
             {
                 string item2 = "St.Michelle Riesling";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of St.Michelle Riesling");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -167,7 +160,6 @@ while (repeat)
                 
                 string item2 = "King Estate Pinot Grigio";
                 DinnerSelection.dinnerchoice(item2);
-                Console.WriteLine("We recommend one glass of King Estate Pinot Grigio");
                 Console.WriteLine(tx);
                 Console.WriteLine(gb);
                 Console.ReadLine();
@@ -190,17 +182,22 @@ while (repeat)
         Console.ReadLine();
     }
 
-bool repeat2 = true;
 
-while (repeat2)
     {
     Console.Clear();
+    Console.WriteLine(" ================================================================");
+    Console.WriteLine(" We have made a great wine selection to pair with your entree!"); 
     Console.WriteLine(" Here are your Dinner selections:"); 
+    Console.WriteLine(" ****************************************************************");
     DinnerSelection.DisplaySelections();
+    Console.WriteLine(" ****************************************************************");
+    Console.WriteLine(" ================================================================");
     Console.WriteLine(" [1] Do you wish to Clear Selections and Start Over? Enter 1?");
     Console.WriteLine(" [2] Do you wish to Remove Selections?");
-    Console.WriteLine(" [3] Do you wish to Search Selections?");
-    Console.WriteLine(" [4] Do you wish to end the Wine Selection Program? Enter 4?");
+    Console.WriteLine(" [3] Do you wish to Replace Selections?");
+    Console.WriteLine(" [4] Do you wish to Search Selections?");
+    Console.WriteLine(" [5] Do you wish to end the Wine Selection Program? Enter 5?");
+    Console.WriteLine(" ================================================================");
     string choice3 = Console.ReadLine();
 
     
@@ -212,7 +209,9 @@ while (repeat2)
         DinnerSelection.ClearSelections();
         Console.WriteLine(" Here are your Dinner selections:"); 
         DinnerSelection.DisplaySelections();
-        repeat2 = false;
+        Console.WriteLine(" Press Enter to go back to menu");
+        Console.ReadLine();
+ 
         }
     else if(choice3 == "2")
         {
@@ -223,10 +222,10 @@ while (repeat2)
                 DinnerSelection.RemoveSelectionsDinner();
                 
                 Console.WriteLine(" Steak has been removed ");
-                Console.WriteLine(" Thank you for using the Wine Selection Program!");
+                DinnerSelection.DisplaySelections();
                 Console.WriteLine(" Press Enter to continue");
                 Console.ReadLine();
-                repeat2 = false;
+                
                 
             }
             else if (choice4 == "2")
@@ -234,48 +233,87 @@ while (repeat2)
                 DinnerSelection.RemoveSelectionsWine();
 
                 Console.WriteLine(" Wine has been removed ");
-                Console.WriteLine(" Thank you for using the Wine Selection Program!");
+                DinnerSelection.DisplaySelections();
                 Console.WriteLine(" Press Enter to continue");
                 Console.ReadLine();
-                repeat2 = false;
+                
             }
             else
             {
             Console.WriteLine(" Command Not Found!!!!! ");
             Console.WriteLine(" Please try Again!! Press Enter to restart!");
             Console.ReadLine();
-            repeat2 = false;
+           
+            }
+         }
+
+    else if(choice3 == "3")
+        {
+        Console.WriteLine(" Do you wan to Replace Dinner or Wine? Enter [1] for Dinner or [2] for Wine.");
+        string choice5 = Console.ReadLine();
+            if (choice5 == "1")
+            {
+                Console.WriteLine(" Type in Your Replacement! ");
+                DinnerSelection.Selection.RemoveAt(0);
+                string replaceDinner = Console.ReadLine();
+                DinnerSelection.AddSelectionsDinner(replaceDinner);
+                DinnerSelection.DisplaySelections();
+                Console.WriteLine(" Press Enter to continue");
+                Console.ReadLine();
+               
+                
+            }
+            else if (choice5 == "2")
+            {
+                Console.WriteLine(" Type in Your Replacement! ");
+                DinnerSelection.Selection.RemoveAt(1);
+                string replaceWine = Console.ReadLine();
+                DinnerSelection.AddSelectionsWine(replaceWine);
+                DinnerSelection.DisplaySelections();
+                Console.WriteLine(" Press Enter to continue");
+                Console.ReadLine();
+                
+            }
+            else
+            {
+            Console.WriteLine(" Command Not Found!!!!! ");
+            Console.WriteLine(" Please try Again!! Press Enter to restart!");
+            Console.ReadLine();
+            
             }
 
-
         }
-      else if(choice3 == "3")
+    else if(choice3 == "4")
         {
         
         Console.WriteLine(" Please type in your search selection");
         string item3 = Console.ReadLine();
         DinnerSelection.SearchSelections(item3);
+        Console.WriteLine(" Press Enter to Continue");
+        Console.ReadLine();
+        
+
         }
-    else if(choice3 == "4")
+    else if(choice3 == "5")
         {
         
         Console.WriteLine(" Thank you for using the Wine Selection Program!");
         Console.WriteLine(" Press Enter to end the Program!");
         Console.ReadLine();
-        repeat2 = false;
         repeat = false;
                 
         }
      else
     {
         Console.WriteLine(" Command Not Found!!!!! ");
-        Console.WriteLine(" Please try Again!! Press Enter to restart!");
+        Console.WriteLine(" Program Will Now End");
         Console.ReadLine();
-        repeat2 = false;
+ 
     }
 
 
     }
+
 }
 
 

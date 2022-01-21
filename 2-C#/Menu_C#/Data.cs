@@ -39,6 +39,25 @@ namespace DataFunction
 
     }
 
+     public static void AddSelectionsDinner(string item)
+    {
+        string x = item;
+        //Selection.RemoveAt(0);
+        Selection.Insert(0, x);
+        Console.WriteLine(" Your Dinner Selection is Added! ");
+
+    }
+
+     public static void AddSelectionsWine(string item)
+    {
+        string x = item;
+        //Selection.RemoveAt(1);
+        Selection.Insert(1, x);
+        Console.WriteLine(" Your Wine Selection is Added! ");
+
+    }
+
+
         public static void SearchSelections(string item)
         {
 

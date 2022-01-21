@@ -15,10 +15,17 @@ namespace DataFunction
     
     public static void DisplaySelections()
     {
-        Console.WriteLine("These are your selections :");
+        Console.WriteLine("These are your selections : ");
               foreach (string x in Selection)
             {
+                if (Selection.Count == 0 || Selection == null)
+                {
+                     Console.WriteLine(" !No Selections? You Should Add One Yourself! ");
+                }
+                else 
+                {
                 Console.WriteLine(x);
+                }
             }
       }
     

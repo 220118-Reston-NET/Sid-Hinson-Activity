@@ -170,7 +170,7 @@ string choice = Console.ReadLine();
     else if(choice == "6")
     {
         Console.WriteLine(" Thank you for using the Wine Selection Program!");
-        Console.WriteLine(" Press Enter to end the Program!");
+        Console.WriteLine(" Press Enter to go to Customization Menu!");
         Console.ReadLine();
         repeat = false;
     }
@@ -181,23 +181,25 @@ string choice = Console.ReadLine();
         Console.WriteLine(" Please try Again!! Press Enter to restart the Program!");
         Console.ReadLine();
     }
+ 
+
 
 
     {
     Console.Clear();
+    Console.WriteLine(" ****************************************************************");
     Console.WriteLine(" ================================================================");
-    Console.WriteLine(" We have made a great wine selection to pair with your entree!"); 
-    Console.WriteLine(" Here are your Dinner selections:"); 
+    Console.WriteLine(" =[1] Do you wish to Clear Selections and Start Over? Enter 1?  =");
+    Console.WriteLine(" =[2] Do you wish to Remove Selections?                         =");
+    Console.WriteLine(" =[3] Do you wish to Replace Selections?                        =");
+    Console.WriteLine(" =[4] Do you wish to Search Selections?                         =");
+    Console.WriteLine(" =[5] Do you wish to end the Wine Selection Program? Enter 5?   =");
+    Console.WriteLine(" ================================================================");
+    Console.WriteLine(" ================================================================");
+    Console.WriteLine(" =We have made a great wine selection to pair with your entree! ="); 
+    Console.WriteLine(" =           Here are your Current Dinner selections:           ="); 
     Console.WriteLine(" ****************************************************************");
     DinnerSelection.DisplaySelections();
-    Console.WriteLine(" ****************************************************************");
-    Console.WriteLine(" ================================================================");
-    Console.WriteLine(" [1] Do you wish to Clear Selections and Start Over? Enter 1?");
-    Console.WriteLine(" [2] Do you wish to Remove Selections?");
-    Console.WriteLine(" [3] Do you wish to Replace Selections?");
-    Console.WriteLine(" [4] Do you wish to Search Selections?");
-    Console.WriteLine(" [5] Do you wish to end the Wine Selection Program? Enter 5?");
-    Console.WriteLine(" ================================================================");
     string choice3 = Console.ReadLine();
 
     
@@ -209,13 +211,13 @@ string choice = Console.ReadLine();
         DinnerSelection.ClearSelections();
         Console.WriteLine(" Here are your Dinner selections:"); 
         DinnerSelection.DisplaySelections();
-        Console.WriteLine(" Press Enter to go back to menu");
+        Console.WriteLine(" Press Enter to go back to Start Menu");
         Console.ReadLine();
  
         }
     else if(choice3 == "2")
         {
-        Console.WriteLine(" Do you wan to remove Dinner or Wine? Enter [1] for Dinner or [2] for Wine.");
+        Console.WriteLine(" Do you want to remove Dinner or Wine? Enter [1] for Dinner or [2] for Wine.");
         string choice4 = Console.ReadLine();
             if (choice4 == "1")
             {
@@ -241,7 +243,7 @@ string choice = Console.ReadLine();
             else
             {
             Console.WriteLine(" Command Not Found!!!!! ");
-            Console.WriteLine(" Please try Again!! Press Enter to restart!");
+            Console.WriteLine(" Please try Again!! Press Enter to go to Customization Menu!");
             Console.ReadLine();
            
             }
@@ -306,7 +308,7 @@ string choice = Console.ReadLine();
      else
     {
         Console.WriteLine(" Command Not Found!!!!! ");
-        Console.WriteLine(" Program Will Now End");
+        Console.WriteLine(" Program Will Now Restart");
         Console.ReadLine();
  
     }
@@ -314,8 +316,8 @@ string choice = Console.ReadLine();
 
     }
 
-}
 
+}
 
 
 

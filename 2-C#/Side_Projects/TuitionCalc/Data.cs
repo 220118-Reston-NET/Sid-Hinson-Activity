@@ -25,14 +25,15 @@ namespace DataFunctions
         public void GetName()
         {
                 Console.WriteLine(" Please Enter your FIRST name ");
-                FirstName = Console.ReadLine();
+                string inputFirst = Console.ReadLine();
                 Console.WriteLine(" Please Enter your LAST name ");
-                LastName = Console.ReadLine();
-   
+                string inputLast = Console.ReadLine();
+                FirstName = inputFirst;
+                LastName = inputLast;
         }
         public void Welcome()
         {
-                Console.WriteLine(" Hello there " + FirstName + " " + LastName);
+                Console.WriteLine($" Hello there");
                 Console.WriteLine(" It is time to Pick Your College ");
                 Console.WriteLine(" Press Enter to continue ");
         }
@@ -53,8 +54,8 @@ namespace DataFunctions
       public class MGA
     
     {
-        double MgaStHours;
-        double MgaTutionRate = 113.67;
+        public double MgaStHours { get; set; }
+        public double MgaTutionRate = 113.67;
         double MgaActRate = 3.00;
         double MgaAthRate = 45.00;
         double MgaHealthRate = 20.00;
@@ -88,7 +89,7 @@ namespace DataFunctions
     
     {
        
-        double CgtcStHours; 
+        public double CgtcStHours { get; set; }
         double CgtcTutionRate = 100.00;
         double CgtcActRate = 40.00;
         double CgtcAthRate = 0.00;

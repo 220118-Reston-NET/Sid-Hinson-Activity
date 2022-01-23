@@ -5,7 +5,8 @@ UserProgam User1 = new UserProgam();
 
 //Menu Operation
 User1.ProgStart();
-User1.GetName();
+User1.SetName();
+Console.WriteLine($" Hello there {User1.GetName()} ");
 User1.Welcome();
 
 //Program Logic

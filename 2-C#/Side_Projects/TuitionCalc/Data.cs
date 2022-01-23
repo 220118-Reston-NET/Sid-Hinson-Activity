@@ -5,8 +5,8 @@ namespace DataFunctions
     
     {
         // Name Security
-        private string FirstName;
-        private string LastName;
+        private string _firstname;
+        private string _lastname;
 
         // Start Program
           public void ProgStart()
@@ -23,21 +23,26 @@ namespace DataFunctions
         }
 
         //Grab Name as a Test to set Private Field
-        public void GetName()
+        public void SetName()
         {
                 Console.WriteLine(" Please Enter your FIRST name ");
                 string inputFirst = Console.ReadLine();
                 Console.WriteLine(" Please Enter your LAST name ");
                 string inputLast = Console.ReadLine();
-                FirstName = inputFirst;
-                LastName = inputLast;
+                _firstname = inputFirst;
+                _lastname = inputLast;
+        }
+
+        public string GetName()
+        {
+            return _firstname + " " + _lastname ;
         }
 
         //Welcome
         public void Welcome()
         {
-                Console.WriteLine($" Hello there");
-                Console.WriteLine(" It is time to Pick Your College ");
+                Console.WriteLine(" Welcome! ");
+                Console.WriteLine(" First, We need to pick Your College ");
                 Console.WriteLine(" Press Enter to continue ");
         }
 

@@ -11,6 +11,7 @@ string gb ="Press Enter to Continue";
 string red ="Please Choose [1] for Cabernet or [2] for Merlot";
 string white ="Please Choose [1] for Chardonnay or [2] for Sauvignon";
 string sweet ="Please Choose [1] for Riesling or [2] for Pinot Grigio";
+
 while (repeat)
 {
 
@@ -26,13 +27,14 @@ Console.WriteLine("*    Enter 5 if you are vegetarian for dinner!       *");
 Console.WriteLine("*         Enter 6 to exit this program!              *");
 Console.WriteLine("*   !PRESS ENTER TWICE TO SKIP TO CUSTOMIZE MENU!    *");
 Console.WriteLine("******************************************************");
-
 Console.WriteLine(" Please Enter a Number to make your selection!");
-string choice = Console.ReadLine();
+//This code was created to train on serialization by adding a Protein class to serialize ; it is redundant
+string Protein = Console.ReadLine();
+Protein Prog = new Protein();
+Prog.Decision = Protein;
 
 
-
-    if (choice == "1")
+    if (Protein == "1")
     {
             string item = "Steak";
             DinnerSelection.dinnerchoice(item);
@@ -61,7 +63,7 @@ string choice = Console.ReadLine();
             }
     }
 
-      else if(choice == "2")
+      else if(Protein == "2")
     {
             string item = "Chicken";
             DinnerSelection.dinnerchoice(item);
@@ -87,7 +89,7 @@ string choice = Console.ReadLine();
             }
     }
 
-     else if(choice == "3")
+     else if(Protein == "3")
     {
             string item = "Pork";
             DinnerSelection.dinnerchoice(item);
@@ -113,7 +115,7 @@ string choice = Console.ReadLine();
             }
     } 
 
-     else if(choice == "4")
+     else if(Protein == "4")
     {
             
             string item = "Seafood";
@@ -140,7 +142,7 @@ string choice = Console.ReadLine();
             }
     }
 
-     else if(choice == "5")
+     else if(Protein == "5")
     {
             string item = "Vegetarian Meal";
             DinnerSelection.dinnerchoice(item);
@@ -167,7 +169,7 @@ string choice = Console.ReadLine();
             }
     }
 
-    else if(choice == "6")
+    else if(Protein == "6")
     {
         Console.WriteLine(" Thank you for using the Wine Selection Program!");
         Console.WriteLine(" Press Enter to go to Customization Menu!");

@@ -1,8 +1,10 @@
 using System.Collections;
 
+// Data namespace to process the program data
 namespace DataFunction
 {
-   
+
+    //Creates List of Dinner selections
     public class DinnerSelection
     {
         public static List<string> Selection = new List<string>();
@@ -13,6 +15,7 @@ namespace DataFunction
 
         }
     
+    // Display Wine Selections
     public static void DisplaySelections()
     {
         Console.WriteLine("These are your selections : ");
@@ -29,6 +32,7 @@ namespace DataFunction
             }
       }
     
+    // Clear Selections
      public static void ClearSelections()
     {
         Selection.Clear();
@@ -36,6 +40,7 @@ namespace DataFunction
         Console.WriteLine("Press Enter to Start Over");
     }
 
+    //Remove Selections
      public static void RemoveSelectionsDinner()
     {
         Selection.RemoveAt(0);
@@ -45,7 +50,7 @@ namespace DataFunction
         Selection.RemoveAt(1);
 
     }
-
+        //Add Dinner Selection
      public static void AddSelectionsDinner(string item)
     {
         string x = item;
@@ -54,7 +59,7 @@ namespace DataFunction
         Console.WriteLine(" Your Dinner Selection is Added! ");
 
     }
-
+        //Add Selections Wine
      public static void AddSelectionsWine(string item)
     {
         string x = item;
@@ -64,7 +69,7 @@ namespace DataFunction
 
     }
 
-
+        //Search Class
         public static void SearchSelections(string item)
         {
 
@@ -87,11 +92,17 @@ namespace DataFunction
             }
 
 
+        }
+    }
 
 
+//Learning Class added/designed merely to explore serialization. Overall this class was unnecessary and is redundant.
+  class Protein
+{
+   public string Decision { get; set;}
+
+}
 
 
-     }
-   }
 }
  

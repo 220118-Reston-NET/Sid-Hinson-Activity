@@ -3,6 +3,7 @@
 //Program converted from shell script from first day1 shell prog
 //1-20-2022 Expanded to include more functionality
 using DataFunction;
+using WineFunction;
 
 Console.Clear();
 bool repeat = true;
@@ -11,7 +12,6 @@ string gb ="Press Enter to Continue";
 string red ="Please Choose [1] for Cabernet or [2] for Merlot";
 string white ="Please Choose [1] for Chardonnay or [2] for Sauvignon";
 string sweet ="Please Choose [1] for Riesling or [2] for Pinot Grigio";
-
 while (repeat)
 {
 
@@ -27,14 +27,13 @@ Console.WriteLine("*    Enter 5 if you are vegetarian for dinner!       *");
 Console.WriteLine("*         Enter 6 to exit this program!              *");
 Console.WriteLine("*   !PRESS ENTER TWICE TO SKIP TO CUSTOMIZE MENU!    *");
 Console.WriteLine("******************************************************");
+
 Console.WriteLine(" Please Enter a Number to make your selection!");
-//This code was created to train on serialization by adding a Protein class to serialize ; it is redundant
-string Protein = Console.ReadLine();
-Protein Prog = new Protein();
-Prog.Decision = Protein;
+string choice = Console.ReadLine();
 
 
-    if (Protein == "1")
+
+    if (choice == "1")
     {
             string item = "Steak";
             DinnerSelection.dinnerchoice(item);
@@ -45,6 +44,8 @@ Prog.Decision = Protein;
                 string item2 = "Intrinsic Cabernet";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType Intrinsic = new WineType("Red", "Full", "Dry", "Earthy");
+                Intrinsic.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
@@ -57,13 +58,15 @@ Prog.Decision = Protein;
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
                 Console.WriteLine(tx);
+                WineType JLohr = new WineType("Red", "Full", "Dry", "Oaky");
+                JLohr.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                
             }
     }
 
-      else if(Protein == "2")
+      else if(choice == "2")
     {
             string item = "Chicken";
             DinnerSelection.dinnerchoice(item);
@@ -74,6 +77,8 @@ Prog.Decision = Protein;
                 string item2 = "La Crema Chardonnay";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType LaCrema = new WineType("White", "Full", "Sweet", "Floral");
+                LaCrema.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                
@@ -83,13 +88,15 @@ Prog.Decision = Protein;
                 string item2 = "Alphonse Sauvignon";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType Alphonse = new WineType("White", "Full", "Dry", "Floral");
+                Alphonse.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                
             }
     }
 
-     else if(Protein == "3")
+     else if(choice == "3")
     {
             string item = "Pork";
             DinnerSelection.dinnerchoice(item);
@@ -100,6 +107,8 @@ Prog.Decision = Protein;
                 string item2 = "La Crema Chardonnay";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType LaCrema = new WineType("White", "Full", "Dry", "Floral");
+                LaCrema.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
@@ -109,13 +118,15 @@ Prog.Decision = Protein;
                 string item2 = "Alphonse Sauvignon";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType Alphonse = new WineType("White", "Full", "Sweet", "Floral");
+                Alphonse.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
             }
     } 
 
-     else if(Protein == "4")
+     else if(choice == "4")
     {
             
             string item = "Seafood";
@@ -127,6 +138,8 @@ Prog.Decision = Protein;
                 string item2 = "La Crema Chardonnay";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType LaCrema = new WineType("White", "Full", "Dry", "Floral");
+                LaCrema.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
@@ -136,13 +149,15 @@ Prog.Decision = Protein;
                 string item2 = "Alphonse Sauvignon";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType Alphonse = new WineType("White", "Full", "Sweet", "Floral");
+                Alphonse.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
             }
     }
 
-     else if(Protein == "5")
+     else if(choice == "5")
     {
             string item = "Vegetarian Meal";
             DinnerSelection.dinnerchoice(item);
@@ -153,6 +168,8 @@ Prog.Decision = Protein;
                 string item2 = "St.Michelle Riesling";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType StMich = new WineType("White", "Full", "Sweet", "Fruity");
+                StMich.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
@@ -163,13 +180,15 @@ Prog.Decision = Protein;
                 string item2 = "King Estate Pinot Grigio";
                 DinnerSelection.dinnerchoice(item2);
                 Console.WriteLine(tx);
+                WineType KingEst = new WineType("White", "Light", "Buttery", "Floral");
+                KingEst.DisplayWine();
                 Console.WriteLine(gb);
                 Console.ReadLine();
                 
             }
     }
 
-    else if(Protein == "6")
+    else if(choice == "6")
     {
         Console.WriteLine(" Thank you for using the Wine Selection Program!");
         Console.WriteLine(" Press Enter to go to Customization Menu!");
@@ -320,7 +339,4 @@ Prog.Decision = Protein;
 
 
 }
-
-
-
 

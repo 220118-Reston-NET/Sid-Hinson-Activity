@@ -93,16 +93,9 @@ namespace DataFunction
 
 
         }
+
+
     }
-
-
-//Learning Class added/designed merely to explore serialization. Overall this class was unnecessary and is redundant.
-  class Protein
-{
-   public string Decision { get; set;}
-
-}
-
-
+  
 }
  

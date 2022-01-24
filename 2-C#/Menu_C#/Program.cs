@@ -4,6 +4,21 @@
 //1-20-2022 Expanded to include more functionality
 using DataFunction;
 using WineFunction;
+using UserStatsFunction;
+using Serialization;
+
+//User Created Object to Later Serialize and Use as an example of Constructor
+var user = new UserStats()
+{
+    Company = "Tesla",
+    Age = 41,
+    FavRest = "Bonefish Grill"
+
+};
+
+
+
+
 
 Console.Clear();
 bool repeat = true;
@@ -207,8 +222,23 @@ string choice = Console.ReadLine();
 
 
     {
+
+    //Stats and Selections
     Console.Clear();
     Console.WriteLine(" ****************************************************************");
+    Console.WriteLine(" *                 Your User Stats Are :                        *");
+    Console.WriteLine(" ****************************************************************");
+    user.DisplayStats();
+    Console.WriteLine(" ****************************************************************");
+    Console.WriteLine(" *=           Here are your Current Dinner selections:          =*");
+    Console.WriteLine(" ****************************************************************"); 
+    DinnerSelection.DisplaySelections();
+    Console.WriteLine(" ****************************************************************");
+    Console.WriteLine(" Press Enter to Continue");
+    Console.ReadLine();
+    Console.Clear();
+
+    //Customization Menu
     Console.WriteLine(" ================================================================");
     Console.WriteLine(" =[1] Do you wish to Clear Selections and Start Over? Enter 1?  =");
     Console.WriteLine(" =[2] Do you wish to Remove Selections?                         =");
@@ -217,10 +247,10 @@ string choice = Console.ReadLine();
     Console.WriteLine(" =[5] Do you wish to end the Wine Selection Program? Enter 5?   =");
     Console.WriteLine(" ================================================================");
     Console.WriteLine(" ================================================================");
-    Console.WriteLine(" =We have made a great wine selection to pair with your entree! ="); 
-    Console.WriteLine(" =           Here are your Current Dinner selections:           ="); 
-    Console.WriteLine(" ****************************************************************");
-    DinnerSelection.DisplaySelections();
+    Console.WriteLine(" =We have made a great wine selection to pair with your entree! =");
+    Console.WriteLine(" ================================================================");
+    Console.WriteLine(" =              Enter a Selection to Continue                   =");
+    Console.WriteLine(" ================================================================"); 
     string choice3 = Console.ReadLine();
 
     
@@ -337,6 +367,13 @@ string choice = Console.ReadLine();
 
     }
 
-
+    // Testing Serialization
+    Console.WriteLine(" But wait! There's more!");
+    Console.WriteLine("Press Enter to Continue");
+    Console.ReadLine();
+    Console.Clear();
+    Serialize.SerialMain();
+    Console.WriteLine(" Press Enter to really end the Program this time!");
+    Console.ReadLine();
 }
 

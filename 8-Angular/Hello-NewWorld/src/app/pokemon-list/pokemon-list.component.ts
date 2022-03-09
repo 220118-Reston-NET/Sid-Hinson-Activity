@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Pokemon } from "../models/pokemon.model";
+import { PokeService } from "../Services/poke.service";
 
 //Decorator
 @Component({
@@ -17,25 +18,12 @@ export class PokemonListComponent {
     src1:string = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Apocalypse_vasnetsov.jpg";
     isVisible:boolean = true;
 
-    listofPokemon:Pokemon[] =
-    [{
-        id:132,
-        base_experience: 101,
-        name: 'ditto',
-        sprites: {
-            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
-        }
+    listofPokemon: Pokemon[];
 
-    },
-    {
-        id:125,
-        base_experience: 112,
-        name: 'pikachu',
-        sprites: {
-            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
-        }
-    }];
+    constructor(private pokeServ:PokeService) {
+        this.listofPokemon = [];
 
+    }
     changeTitle()
     {
         this.title = "I was never a fan of Pokemon";
@@ -47,5 +35,24 @@ export class PokemonListComponent {
     {
         this.isVisible = !this.isVisible;
     }
+
+
+    // this.listofPokemon[{
+    //     id:132,
+    //     base_experience: 101,
+    //     name: 'ditto',
+    //     sprites: {
+    //         front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
+    //     }
+
+    // },
+    // {
+    //     id:125,
+    //     base_experience: 112,
+    //     name: 'pikachu',
+    //     sprites: {
+    //         front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
+    //     }
+    // }];
 
 }

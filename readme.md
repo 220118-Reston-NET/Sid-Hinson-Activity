@@ -1,3 +1,3 @@
-Sid Hinson
-Directory of Training Code Tutorials
+# Training Code Tutorials
+## Learning Code and Demos
 

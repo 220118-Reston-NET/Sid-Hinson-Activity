@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<button class="primary-button" (click) = "changeTitle()">Change This Title</button>
+<button (click)="changeVisible()" class="btn btn-primary" style="margin: right 1rem;">Hide</button>
+<!-- <img [src]="src1"> -->
+<table class="table table-dark">
+    <thead>
+        <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>BASE EXP</td>
+        <td>IMAGE
+            <button (click)="changeVisible()" class="btn btn-primary">Hide</button>
+        </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let pokemon of listofPokemon">
+            <td>{{pokemon.id}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.base_experience}}</td>
+            <td>
+                <img *ngIf="isVisible" [src] = "pokemon.sprites.front_default">
+            </td>
+       </tr>
+    </tbody>
+</table>
+
+<!--tr is a row, td is column-->
+<!--ngFOR will repeat the structure until it finishes the elements inside of array-->

@@ -81,3 +81,6 @@ ani = {
         return "SNARF";
     }
 };
+//Arrow Notation in a Arrow Function
+let arrNot = (para1) => console.log(para1);
+arrNot("Please No Apocalypse");

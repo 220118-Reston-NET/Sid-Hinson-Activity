@@ -121,6 +121,12 @@ ani = {
     }
 }
 
+//Arrow Notation in a Arrow Function
+
+let arrNot = (para1:String) => console.log(para1)
+arrNot("Please No Apocalypse");
+
+
 
 
 

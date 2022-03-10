@@ -1,25 +1,34 @@
-<h1>{{title}}</h1>
 <button class="primary-button" (click) = "changeTitle()">Change This Title</button>
 <button (click)="changeVisible()" class="btn btn-primary" style="margin: right 1rem;">Hide</button>
+
+<!-- Probably Best to make a global css style for Elements -->
+<div class="card" style="width: 18rem; margin-top: 1rem; margin-bottom: 1rem;">
+    <div class="card-body">
+        <h3>Search For Pokemon</h3>
+        <input type="text" class="form-control" [(ngModel)]="FilteredName"> {{filteredName}}
+    </div>
+</div>
+<h1>{{title}}</h1>
 <!-- <img [src]="src1"> -->
 <table class="table table-dark">
     <thead>
         <tr>
         <td>ID</td>
-        <td>NAME</td>
-        <td>BASE EXP</td>
-        <td>IMAGE
+        <td>Name</td>
+        <td>Level</td>
+        <!-------Ternary Operator Expression but you could use if/else[ugly]-->
+        <td [ngStyle]="{margin: 50 , color:isVisible ? 'black': 'red'}">Follow the Yellow Brick Road
             <button (click)="changeVisible()" class="btn btn-primary">Hide</button>
         </td>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let pokemon of listofPokemon">
-            <td>{{pokemon.id}}</td>
+        <tr *ngFor = "let pokemon of filteredListOfPoke">
+            <td>{{pokemon.pokeId}}</td>
             <td>{{pokemon.name}}</td>
-            <td>{{pokemon.base_experience}}</td>
+            <td>{{pokemon.level}}</td>
             <td>
-                <img *ngIf="isVisible" [src] = "pokemon.sprites.front_default">
+                <!-- <img *ngIf="isVisible" [src] = "pokemon.sprites.front_default"> -->
             </td>
        </tr>
     </tbody>

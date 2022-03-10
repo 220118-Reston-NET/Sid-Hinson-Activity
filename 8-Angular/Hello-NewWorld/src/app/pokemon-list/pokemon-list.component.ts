@@ -17,18 +17,22 @@ export class PokemonListComponent {
     title:string = "List of Pokemon";
     src1:string = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Apocalypse_vasnetsov.jpg";
     isVisible:boolean = true;
-
+    filteredName:string = "";
     listofPokemon: Pokemon[];
+    filteredListOfPoke:Pokemon[] = [];
 
+    //PokeService complete with Service Method that returns an Observable 
     constructor(private pokeServ:PokeService) {
         this.listofPokemon = [];
-
+        this.filteredListOfPoke = [];
+        this.pokeServ.getAllPokemon().subscribe(result =>{this.listofPokemon = result; this.filteredListOfPoke = result});
     }
+
     changeTitle()
     {
-        this.title = "I was never a fan of Pokemon";
+        this.title = "DragonballZ is better than Pokemon";
         this.src1 = "https://upload.wikimedia.org/wikipedia/commons/c/ca/Pomeranian.JPG";
-        this.listofPokemon.push({base_experience:64, id:1, name:'bulbosaur', sprites: {front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}})
+        
     }
 
     changeVisible()
@@ -36,23 +40,26 @@ export class PokemonListComponent {
         this.isVisible = !this.isVisible;
     }
 
-
-    // this.listofPokemon[{
-    //     id:132,
-    //     base_experience: 101,
-    //     name: 'ditto',
-    //     sprites: {
-    //         front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
-    //     }
-
-    // },
+    // public get FilteredName():string
     // {
-    //     id:125,
-    //     base_experience: 112,
-    //     name: 'pikachu',
-    //     sprites: {
-    //         front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
-    //     }
-    // }];
+    //     return this.filteredName; 
+    // }
+
+    public set FilteredName(s1:string)
+    {
+        this.filteredName = s1;
+        this.filteredListOfPoke = this.filteredName ? this.SearchFilter(this.filteredName) : this.listofPokemon;
+    }
+
+    //filters array of Pokemon based on user input
+    SearchFilter(filter:string):Pokemon[]
+    {
+        filter = filter.toLowerCase();
+        let templistpoke:Pokemon[];
+        //The -1 filters out garbage that does not link with the filter, other it will return 1 - index of 1 will equal victory
+        //This will be useful for broad searches, making it 1 would require EXACTNESS
+        templistpoke = this.listofPokemon.filter((pokemon:Pokemon) => pokemon.name.toLowerCase().indexOf(filter) != -1)
+        return templistpoke;
+    }
 
 }

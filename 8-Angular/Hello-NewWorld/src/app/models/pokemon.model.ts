@@ -1,8 +1,8 @@
 export interface Pokemon
 {
-    id:number;
+    pokeId:number;
     name:string;
-    base_experience:number;
+    level:number;
     sprites:
     {
         front_default:string;

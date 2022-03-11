@@ -25,7 +25,7 @@
     <tbody>
         <tr *ngFor = "let pokemon of filteredListOfPoke">
             <td>{{pokemon.pokeId}}</td>
-            <td>{{pokemon.name}}</td>
+            <td [routerLink]="['/profile', pokemon.name]" style="cursor: pointer;">{{pokemon.name}}</td>
             <td>{{pokemon.level}}</td>
             <td>
                 <!-- <img *ngIf="isVisible" [src] = "pokemon.sprites.front_default"> -->

@@ -14,9 +14,9 @@ export class NavBarComponent implements OnInit {
   }
 
   // You would take out the routerlink on navbar and put this on a click event
-  // goToProfile()
-  // {
-  //   this.router.navigate(["/profile"])
-  // }
+  goToProfile()
+  {
+    this.router.navigate(["/profile"])
+  }
 
 }

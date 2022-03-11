@@ -8,6 +8,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { PokeProfileComponent } from './poke-profile/poke-profile.component';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -15,13 +17,21 @@ import { RouterModule } from '@angular/router';
     PokemonListComponent,
     NavBarComponent,
     PokeProfileComponent,
+    NotFoundComponent,
+  
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([{path: "listofPoke", component: PokemonListComponent},{path: "profile", component: PokeProfileComponent}, {path: "", component:PokemonListComponent}])
+    RouterModule.forRoot([
+      {path: "listofPoke", component: PokemonListComponent},
+      {path: "profile/:pokename", component: PokeProfileComponent},
+      {path: "", component: PokeProfileComponent}, //Default Endpoint
+      {path: "**", component:NotFoundComponent }, //WildcardEndpoint
+      
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

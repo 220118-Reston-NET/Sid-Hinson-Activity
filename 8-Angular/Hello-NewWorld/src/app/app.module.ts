@@ -5,10 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PokeProfileComponent } from './poke-profile/poke-profile.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { StarComponent } from './star/star.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddPokeComponent } from './add-poke/add-poke.component';
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavBarComponent,
     PokeProfileComponent,
     NotFoundComponent,
-  
+    StarComponent,
+    AddPokeComponent
+    
 
   ],
   imports: [
@@ -28,10 +33,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RouterModule.forRoot([
       {path: "listofPoke", component: PokemonListComponent},
       {path: "profile/:pokename", component: PokeProfileComponent},
+      {path: "pokemon", component: AddPokeComponent},
       {path: "", component: PokeProfileComponent}, //Default Endpoint
       {path: "**", component:NotFoundComponent }, //WildcardEndpoint
-      
-    ])
+    ]),
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

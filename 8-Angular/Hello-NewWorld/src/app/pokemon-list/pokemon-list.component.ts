@@ -20,12 +20,17 @@ export class PokemonListComponent {
     filteredName:string = "";
     listofPokemon: Pokemon[];
     filteredListOfPoke:Pokemon[] = [];
+    isRatingVisible:boolean = false;
 
     //PokeService complete with Service Method that returns an Observable 
     constructor(private pokeServ:PokeService) {
         this.listofPokemon = [];
         this.filteredListOfPoke = [];
-        this.pokeServ.getAllPokemon().subscribe(result =>{this.listofPokemon = result; this.filteredListOfPoke = result});
+        this.pokeServ.getAllPokemon().subscribe(result =>{result.forEach(poke => poke.rating = this.getRandomInt(5)); this.listofPokemon = result; this.filteredListOfPoke = result});
+    }
+
+    getRandomInt(max:number){
+        return Math.floor(Math.random()*max)
     }
 
     changeTitle()
@@ -62,4 +67,8 @@ export class PokemonListComponent {
         return templistpoke;
     }
 
+    starEventWasTriggered(num1:number)
+    {
+        this.isRatingVisible = !this.isRatingVisible; 
+    }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PokeApi } from '../models/pokeApi.model';
 import { SpriteApi } from '../models/spriteApi.model';
 import { PokeService } from '../Services/poke.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-poke-profile',
@@ -28,6 +29,11 @@ export class PokeProfileComponent implements OnInit {
     this.pokeServ.getPokeByName(this.pokeName).subscribe(result => {
       this.pokemon = result;
     });
+  }
+
+  get PokeSprite() : SpriteApi
+  {
+    return this.pokemon.sprites;
   }
 
 }

@@ -16,8 +16,9 @@
         <td>ID</td>
         <td>Name</td>
         <td>Level</td>
+        <td>Rating</td>
         <!-------Ternary Operator Expression but you could use if/else[ugly]-->
-        <td [ngStyle]="{margin: 50 , color:isVisible ? 'black': 'red'}">Follow the Yellow Brick Road
+        <td [ngStyle]="{margin: 50 , color:isVisible ? 'black': 'red'}">Hard Work
             <button (click)="changeVisible()" class="btn btn-primary">Hide</button>
         </td>
         </tr>
@@ -27,10 +28,12 @@
             <td>{{pokemon.pokeId}}</td>
             <td [routerLink]="['/profile', pokemon.name]" style="cursor: pointer;">{{pokemon.name}}</td>
             <td>{{pokemon.level}}</td>
-            <td>
-                <!-- <img *ngIf="isVisible" [src] = "pokemon.sprites.front_default"> -->
+            <td>{{pokemon.rating}}</td>
+            <td><app-star [rating]="pokemon.rating" (outputRatingEmitter)="starEventWasTriggered($event)"></app-star>
+                <span *ngIf="isRatingVisible">{{pokemon.rating}}</span>
             </td>
-       </tr>
+            <!-- <img *ngIf="isVisible" [src] = "pokemon.sprites.front_default"> -->
+        </tr>
     </tbody>
 </table>
 
